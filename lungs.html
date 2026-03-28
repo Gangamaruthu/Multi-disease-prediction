@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Lung Prediction</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body {
+    background: linear-gradient(135deg, #5f72be, #9b23ea);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.container-box {
+    background: #f1f1f1;
+    padding: 30px;
+    border-radius: 15px;
+    margin-top: 80px;
+}
+
+h1 {
+    text-align: center;
+    font-weight: bold;
+}
+
+.result {
+    text-align: center;
+    color: red;
+    margin-bottom: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="container-box">
+
+        <h1>Lungs Prediction</h1>
+
+        <h4 class="result">Result : {{ output }}</h4>
+
+        <form method="POST" action="{{ url_for('lungs') }}">
+
+            <div class="row">
+
+                <div class="col-md-6">
+                    <label>Age</label>
+                    <input type="number" name="age" class="form-control" required>
+                </div>
+
+                <div class="col-md-6">
+                    <label>Smoking</label>
+                    <input type="number" name="smoking" class="form-control" required>
+                </div>
+
+                <div class="col-md-6 mt-3">
+                    <label>Alcohol</label>
+                    <input type="number" name="alcohol" class="form-control" required>
+                </div>
+
+                <div class="col-md-6 mt-3">
+                    <label>Air Pollution</label>
+                    <input type="number" name="airpollution" class="form-control" required>
+                </div>
+
+                <div class="col-md-6 mt-3">
+                    <label>Genetic Risk</label>
+                    <input type="number" name="geneticrisk" class="form-control" required>
+                </div>
+
+                <div class="col-md-6 mt-3">
+                    <label>Chest Pain</label>
+                    <input type="number" name="chestpain" class="form-control" required>
+                </div>
+
+                <div class="col-md-6 mt-3">
+                    <label>Coughing</label>
+                    <input type="number" name="coughing" class="form-control" required>
+                </div>
+
+                <div class="col-md-6 mt-3">
+                    <label>Fatigue</label>
+                    <input type="number" name="fatigue" class="form-control" required>
+                </div>
+
+                <div class="col-md-6 mt-3">
+                    <label>Shortness of Breath</label>
+                    <input type="number" name="shortnessbreath" class="form-control" required>
+                </div>
+
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100 mt-4">
+                Predict Lungs Disease
+            </button>
+            <div class="text-center mt-4">
+                <a href="{{ url_for('explore') }}" class="btn btn-success">
+                    EXIT
+                </a>
+            </div>
+
+        </form>
+
+    </div>
+</div>
+
+</body>
+</html>

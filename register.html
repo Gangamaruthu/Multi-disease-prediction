@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register - HealthAI</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+body { background: #0f172a; color: white; font-family: 'Segoe UI', sans-serif; }
+.container { max-width: 450px; margin: 60px auto; padding: 40px; background: #1e293b; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.5); }
+h2 { text-align: center; margin-bottom: 30px; color: #38bdf8; font-weight: 600; }
+.form-label { font-weight: 500; }
+.form-control { background: #0f172a; border: 1px solid #38bdf8; color: white; }
+.form-control:focus { background: #0f172a; color: white; border-color: #0ea5e9; box-shadow: none; }
+.btn-register { background-color: #38bdf8; color: black; font-weight: bold; border-radius: 30px; width: 100%; padding: 12px; margin-top: 10px; transition: 0.3s; }
+.btn-register:hover { background-color: #0ea5e9; transform: scale(1.03); }
+.text-center a { color: #38bdf8; text-decoration: none; }
+.text-center a:hover { color: #0ea5e9; }
+.alert { margin-top: 15px; }
+</style>
+</head>
+<body>
+
+<div class="container">
+<h2>Create Account</h2>
+
+
+<form method="POST" action ='/register'>
+    <div class="mb-3">
+        <label for="firstname" class="form-label">First Name</label>
+        <input type="text" class="form-control" name="firstname" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="lastname" class="form-label">Last Name</label>
+        <input type="text" class="form-control" name="lastname" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="email" class="form-label">Email ID</label>
+        <input type="email" class="form-control" name="email" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="phone" class="form-label">Phone Number</label>
+        <input type="tel" class="form-control" name="phone" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" name="password" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="confirm_password" class="form-label">Confirm Password</label>
+        <input type="password" class="form-control" name="confirm_password" required>
+    </div>
+
+    <button type="submit" class="btn btn-register">Register</button>
+</form>
+
+<p class="text-center mt-3">Already have an account? <a href="{{ url_for('login') }}">Login here</a></p>
+</div>
+
+</body>
+</html>

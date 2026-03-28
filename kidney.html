@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kidney Disease Prediction</title>
+
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+<div class="container mt-5">
+    <div class="card shadow p-4">
+        <h2 class="text-center mb-4">Kidney Disease Prediction</h2>
+
+        <form method="POST">
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label>Age</label>
+                    <input type="number" name="age" class="form-control" required>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label>Blood Pressure</label>
+                    <input type="number" name="bloodpressure" class="form-control" required>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label>Specific Gravity (sg)</label>
+                    <input type="number" step="0.01" name="sg" class="form-control" required>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label>Albumin (al)</label>
+                    <input type="number" name="al" class="form-control" required>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label>Sugar</label>
+                    <input type="number" name="sugar" class="form-control" required>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label>Blood Urea (bu)</label>
+                    <input type="number" step="0.1" name="bu" class="form-control" required>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label>Serum Creatinine (sc)</label>
+                    <input type="number" step="0.1" name="sc" class="form-control" required>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label>Sodium</label>
+                    <input type="number" step="0.1" name="sodium" class="form-control" required>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label>Potassium</label>
+                    <input type="number" step="0.1" name="potassium" class="form-control" required>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label>Hemoglobin (hg)</label>
+                    <input type="number" step="0.1" name="hg" class="form-control" required>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Predict</button>
+        </form>
+
+        <!-- Output -->
+        {% if output %}
+            <div class="alert alert-info text-center mt-4">
+                <h4>{{ output }}</h4>
+            </div>
+        {% endif %}
+
+        <!-- Exit Button -->
+        <div class="text-center mt-3">
+            <a href="/explore" class="btn btn-danger">Exit to Home</a>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

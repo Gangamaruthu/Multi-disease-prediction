@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Diabetes Prediction</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+
+body{
+background:linear-gradient(135deg,#667eea,#764ba2);
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.card{
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+h1{
+font-weight:700;
+}
+
+.btn-primary{
+width:100%;
+font-size:18px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card p-4">
+
+<h1 class="text-center mb-4">Diabetes Prediction</h1>
+
+<h4 class="text-center text-danger mb-3">Result : {{ output }}</h4>
+
+<form action="/predict" method="POST">
+
+<div class="row mb-3">
+
+<div class="col">
+<label class="form-label">Age</label>
+<input type="number" name="age" class="form-control" required>
+</div>
+
+<div class="col">
+<label class="form-label">Gender</label>
+<select name="gender" class="form-control">
+<option value="" disabled selected>Select Gender</option>
+<option value="0">Female</option>
+<option value="1">Male</option>
+<option value="2">Other</option>
+</select>
+</div>
+
+</div>
+
+
+<div class="row mb-3">
+
+<div class="col">
+<label class="form-label">Hypertension</label>
+<select name="hypertension" class="form-control">
+<option value="" disabled selected></option>
+<option value="0">No</option>
+<option value="1">Yes</option>
+</select>
+</div>
+
+<div class="col">
+<label class="form-label">Heart Disease</label>
+<select name="heart_disease" class="form-control">
+<option value="" disabled selected></option>
+<option value="0">No</option>
+<option value="1">Yes</option>
+</select>
+</div>
+
+</div>
+
+
+<div class="row mb-3">
+
+<div class="col">
+<label class="form-label">Smoking History</label>
+<select name="smoking" class="form-control">
+<option value="" disabled selected></option>
+<option value="0">Never</option>
+<option value="1">No Info</option>
+<option value="2">Current</option>
+<option value="3">Former</option>
+<option value="4">Ever</option>
+<option value="5">Not Current</option>
+</select>
+</div>
+
+<div class="col">
+<label class="form-label">BMI</label>
+<input type="number" step="0.1" name="bmi" class="form-control" required>
+</div>
+
+</div>
+
+
+<div class="row mb-3">
+
+<div class="col">
+<label class="form-label">HbA1c Level</label>
+<input type="number" step="0.1" name="HbA1c_level" class="form-control" required>
+</div>
+
+<div class="col">
+<label class="form-label">Blood Glucose Level</label>
+<input type="number" name="blood_glucose_level" class="form-control" required>
+</div>
+
+</div>
+
+
+<button type="submit" class="btn btn-primary">Predict Diabetes</button>
+<div class="text-center mt-4">
+    <a href="{{ url_for('explore') }}" class="btn btn-success">
+        EXIT
+    </a>
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+</body>
+</html>
